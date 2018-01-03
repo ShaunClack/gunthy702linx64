@@ -9,7 +9,10 @@ Simple run:
 - default http port 80 is used to access gunthy gui
 
 ```
-$ docker run -d --name my_gunbot -p 80:5000 uthacalthing/gunthy702linx64
+$ docker run -d -it \
+  --name my_gunbot \
+  -p 80:5000 \
+  uthacalthing/gunthy702linx64:latest
 ```
 
 Want to access gunbot data directly from your host filesystem:
@@ -17,7 +20,11 @@ Want to access gunbot data directly from your host filesystem:
 - default http port 80 is used to access gunthy gui
 
 ```
-$ docker run -d --name my_gunbot -p 80:5000 --volume /my/path/to/data:/gunbot-data uthacalthing/gunthy702linx64
+$ docker run -d -it \
+  --name my_gunbot \
+  -p 80:5000 \
+  --mount source=/my/path/to/data,target=/gunbot-data \
+  uthacalthing/gunthy702linx64:latest
 ```
 
 Want to have multiple concurrent gunbot running (one for each exchange for example)?
