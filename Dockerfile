@@ -59,8 +59,8 @@ You should mount a volume on that directory if you want to access files from the
 RUN mv config.js config.js.origin && \
   ln -s /gunbot-data/config.js config.js && \
   ln -s /gunbot-data/db.sqlite db.sqlite && \
-  ln -s /gunbot-data/err.log out.log && \
-  ln -s /gunbot-data/out.log err.log;
+  ln -s /gunbot-data/err.log err.log && \
+  ln -s /gunbot-data/out.log out.log;
 
 # Expose port 5000 for access to gunthy-gui
 EXPOSE 5000
