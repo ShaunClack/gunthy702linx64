@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # if config file does not exist in data folder, copy the original one
-if [ ! -f /gunbot/config.js ]
+if [ ! -f /gunbot-data/config.js ]
 then
   cp /gunbot/config.js.origin /gunbot-data/config.js
 fi
