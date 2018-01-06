@@ -21,10 +21,6 @@ RUN apt-get clean -y && \
 # create a gunbot and gunbot-data folder to hold files
 RUN mkdir /gunbot;
 
-# add init script inside
-ADD ./run.sh /gunbot/run.sh
-RUN chmod +x /gunbot/run.sh
-
 # go in that folder
 WORKDIR /gunbot
 
@@ -65,6 +61,10 @@ RUN mv config.js config.js.origin && \
 # Expose port 5000 for access to gunthy-gui
 EXPOSE 5000
 
-# launch gunthy-gui
+# add init script inside
+ADD ./run.sh /gunbot/run.sh
+RUN chmod +x /gunbot/run.sh
+
+# launch init script and gunthy
 ENTRYPOINT ["/gunbot/run.sh"]
 
